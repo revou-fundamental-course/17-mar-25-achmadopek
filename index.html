@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RevoU Mini Project - achmadopek</title>
+    <style>
+      .container{
+        border-width: 2px;
+        border-color: red;
+        border-style: dotted;
+        width: 320px;
+      }
+
+      .border{
+        border-width: 1px;
+        border-color: green;
+        border-style: solid;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      input[type="number"]{
+        padding: 5px;
+      }
+
+      button{
+        padding: 5px;
+        background-color: lightblue;
+      }
+
+      .sembunyi{
+        display: none;
+      }
+
+      .tampil{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hitung Luas dan Keliling Persegi</h2>
+
+    <div class="container">
+
+      <div class="border">
+        <input type="radio" name="jenis_bangun" value="Persegi" onclick="tampilkan_form_persegi()"> Persegi
+        <input type="radio" name="jenis_bangun" value="Persegi Panjang" onclick="tampilkan_form_persegi_panjang()"> Persegi Panjang
+      </div>
+      
+      <div id="form_persegi" class="sembunyi border">
+        <input type="number" id="sisi" placeholder="Panjang Sisi">
+      </div>
+
+      <div id="form_persegi_panjang" class="sembunyi border">
+        <input type="number" id="panjang" placeholder="Panjang">
+        <input type="number" id="lebar" placeholder="Lebar">
+      </div>
+
+      <div class="border">
+        <button id="hitung_luas" onclick="hitung_luas()">Hitung Luas</button>
+        <button id="hitung_keliling" onclick="hitung_keliling()">Hitung Keliling</button>
+      </div>
+
+      <div class="border">
+        <span id="hasil">Hasil hitung disini</span>
+      </div>
+
+    </div>
+
+    <script>
+      let form_persegi = document.getElementById("form_persegi");
+      let form_persegi_panjang = document.getElementById("form_persegi_panjang");
+      let hasil = document.getElementById("hasil");
+
+      function tampilkan_form_persegi(){
+        form_persegi.classList.add("tampil");
+        form_persegi_panjang.classList.remove("tampil");
+        document.getElementById("sisi").focus();
+      }
+
+      function tampilkan_form_persegi_panjang(){
+        form_persegi_panjang.classList.add("tampil");
+        form_persegi.classList.remove("tampil");
+        document.getElementById("panjang").focus();
+      }
+
+      function hitung_luas(){
+        let sisi = document.getElementById("sisi").value;
+        let panjang = document.getElementById("panjang").value;
+        let lebar = document.getElementById("lebar").value;
+
+        let jenis_bangun = document.querySelector('input[name="jenis_bangun"]:checked').value;
+        let hasil_luas;
+
+        if(jenis_bangun == "Persegi"){
+          hasil_luas = sisi * sisi;
+        }else if(jenis_bangun == "Persegi Panjang"){
+          hasil_luas = panjang * lebar;
+        }
+
+        console.log("Luas " + jenis_bangun + " : " + hasil_luas);
+        hasil.innerText = "Luas " + jenis_bangun + " : " + hasil_luas;
+      }
+
+      function hitung_keliling(){
+        let sisi = document.getElementById("sisi").value;
+        let panjang = document.getElementById("panjang").value;
+        let lebar = document.getElementById("lebar").value;
+
+        let jenis_bangun = document.querySelector('input[name="jenis_bangun"]:checked').value;
+        let hasil_keliling;
+
+        if(jenis_bangun == "Persegi"){
+          hasil_keliling = 4 * sisi;
+        }else if(jenis_bangun == "Persegi Panjang"){
+          hasil_keliling = 2 * (panjang + lebar);
+        }
+
+        console.log("Keliling " + jenis_bangun + " : " + hasil_keliling);
+        hasil.innerText = "Keliling " + jenis_bangun + " : " + hasil_keliling;
+      }
+
+    </script>
+  </body>
+</html>
