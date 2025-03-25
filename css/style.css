@@ -1,0 +1,81 @@
+  .container{
+    border-width: 1px;
+    border-color: darkolivegreen;
+    border-radius: 5px;
+    border-style: solid;
+    width: 320px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+  }
+
+  .judul{
+    padding: 10px;
+    background-color: darkolivegreen;
+  }
+    .judul h1{
+      margin: 0px;
+      color: white;
+    }
+    .judul span{
+      color: lightgreen;
+    }
+
+  .border{
+    border-width: 1px;
+    border-color: green;
+    border-style: solid;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .pilihan {
+    display: flex;
+    vertical-align: middle;
+  }
+    .pilihan input{
+        padding: 0;
+        margin: 0;
+    }
+    .pilihan label{
+        border-width: 1px;
+        border-style: solid;
+        border-color: grey;
+        padding: 5px;
+        top: -2px;
+        position: relative;
+        border-radius: 5px;
+        background-color: lightgreen;
+    }
+    .pilihan .col-kiri{
+        padding-top: 20px;
+        width: 50%;
+        flex: 1;
+    }
+    .pilihan .col-kanan{
+        width: 50%;
+        flex: 1;
+    }
+
+  input[type="number"]{
+    padding: 5px;
+    font-size: medium;
+    width: 100px;
+  }
+
+  button{
+    padding: 10px;
+    background-color: darkolivegreen;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 5px;
+  }
+
+  .sembunyi{
+    display: none;
+  }
+
+  .tampil{
+    display: block;
+  }
